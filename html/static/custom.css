@@ -1,0 +1,146 @@
+/* CUT19 — brown / beige / gold palette */
+:root{
+  --cut-brown: #5c3a21;
+  --cut-dark:  #2b1a10;
+  --cut-beige: #e6d6c3;
+  --cut-gold:  #c9a34b;
+  --cut-cream: #fbf7f0;
+  --cut-contrast: #ffffff;
+}
+
+/* Base */
+body{
+  background: var(--cut-cream);
+  color: var(--cut-dark);
+}
+
+/* Links */
+a { color: var(--cut-brown); }
+a:hover { color: var(--cut-gold); }
+
+/* Top navigation / header */
+.navigation-top,
+.top-bar,
+.contain-to-grid { 
+  background: linear-gradient(180deg, var(--cut-brown), var(--cut-dark)) !important;
+  border-color: rgba(0,0,0,0.15);
+}
+.navigation-top__logo-link img { filter: none; }
+
+/* First screen overlay (keeps background-image but gives warm tint) */
+.content-container.first-screen {
+  background-color: rgba(92,58,33,0.20) !important;
+  color: var(--cut-contrast);
+}
+
+/* Force header text light (для темного фонового зображення) */
+.content-container.first-screen h1,
+.main-message h1 {
+  color: var(--cut-cream) !important;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6) !important;
+}
+
+/* Вирівнювання заголовків — h2/h3 в коричневих тонах */
+h2, h3 {
+  color: var(--cut-brown) !important;
+}
+
+/* Забираємо залишковий "синій" стиль лінків по всій сторінці */
+a, a:visited, .navigation-top__items a, .top-bar-section a, .icon-links a {
+  color: var(--cut-brown) !important;
+}
+a:hover, .navigation-top__items a:hover {
+  color: var(--cut-gold) !important;
+}
+
+/* Highlighted headings / accents */
+.highlighted, h1, h2, h3 {
+  color: var(--cut-brown);
+}
+h1.text-shadow { text-shadow: 0 2px 6px rgba(0,0,0,0.45); }
+
+/* Buttons */
+.button, button, .button:visited {
+  background: var(--cut-brown) !important;
+  color: var(--cut-contrast) !important;
+  border-color: rgba(0,0,0,0.12) !important;
+}
+.button._filled-white {
+  background: var(--cut-gold) !important;
+  color: var(--cut-dark) !important;
+}
+.button._white {
+  background: var(--cut-cream);
+  color: var(--cut-brown);
+}
+.button:hover {
+  filter: brightness(1.05);
+}
+
+/* Icon blocks (advantages) */
+.icon-block { 
+  background: var(--cut-beige);
+  color: var(--cut-brown);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.icon-block.highlighted { background: linear-gradient(180deg,var(--cut-gold),var(--cut-beige)); color: var(--cut-dark); }
+
+/* Panels / boxes */
+.panel, .box {
+  background: #fffaf6;
+  border-color: rgba(92,58,33,0.08);
+}
+
+/* Footer */
+#footer.footer-dark, .footer-dark {
+  background: linear-gradient(180deg,var(--cut-dark), #111);
+  color: var(--cut-cream);
+}
+
+/* Labels, badges */
+.label, .badge {
+  background: var(--cut-gold);
+  color: var(--cut-dark);
+}
+
+/* Alerts */
+.alert-box { background: var(--cut-brown); border-color: var(--cut-dark); color: var(--cut-contrast); }
+
+/* Small UI tweaks for contrast */
+.navigation-top__items a,
+.top-bar-section ul li > a { color: var(--cut-cream) !important; }
+.icon-links a i, .icon-bar > * i { color: var(--cut-gold); }
+
+/* Іконки FontAwesome — золотисті/коричневі замість синього */
+.fa, i[class*="fa-"] {
+  color: var(--cut-gold) !important;
+  text-shadow: none !important;
+}
+
+/* Вторинний текст/підписи */
+.secondary, .info-tip, p.secondary, small {
+  color: rgba(43,26,16,0.9) !important; /* темно-коричневий */
+}
+
+/* Форми / placeholders / лінки у формах */
+input::placeholder, textarea::placeholder {
+  color: rgba(43,26,16,0.45) !important;
+}
+
+/* Навігація — тексти у світлому відтінку */
+.navigation-top, .navigation-top__items a {
+  color: var(--cut-cream) !important;
+}
+
+/* Якщо лишилися компоненти з окремими кольорами фреймворка */
+[class*="call-to-action"], .panel, .box {
+  border-color: rgba(92,58,33,0.08) !important;
+  background-color: #fffaf6 !important;
+}
+
+/* Невеликі корекції для адаптивності */
+@media (max-width: 640px) {
+  .content-container.first-screen h1 { font-size: 1.6rem !important; }
+  .content-container.first-screen { min-height: 40vh !important; padding: 2rem 0; }
+}
